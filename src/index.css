@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.clusterInput {
+  display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+}
+
+#clusterCheckboxes{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+  flex-direction: column;
+  height: 98vh;
+  width: 98vw;
+
+  position: relative;
+}
+
+.container-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  max-width: 98vw;
+  max-height: 98vh;
+}
+
+.container-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.lateral-panel {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  width: 20vw;
+  padding: 2vw;
+  border: 5px solid rgb(35, 22, 105);
+  height: 80vh;
+  margin-top: 10px;
+}
+
+span.loading {
+  animation: is-rotating 1s infinite;
+  border: 4px solid #a3a3a3;
+  border-radius: 100%;
+  border-top: 4px solid rgb(35, 22, 105);
+
+  height: 25px;
+  width: 25px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes is-rotating {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
