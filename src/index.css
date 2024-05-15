@@ -88,3 +88,24 @@ span.loading {
     transform: rotate(360deg);
   }
 }
+
+.floating {
+  /* visibility: hidden; */
+  width: 120px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  border-color: #ff0000;
+  border-width: 2px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* .node:hover .floating {
+  visibility: visible;
+}  */

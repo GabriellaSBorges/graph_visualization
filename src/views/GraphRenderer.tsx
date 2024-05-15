@@ -12,6 +12,7 @@ import AbstractGraph, { Attributes } from 'graphology-types';
 import Graph from 'graphology';
 import ForceSupervisor from "graphology-layout-force/worker";
 import App from '../App';
+import { SigmaEventPayload, SigmaEvents } from 'sigma/types';
 
 // import { BiBookContent, BiRadioCircleMarked } from "react-icons/bi";
 // import { SigmaContainer, ControlsContainer, ZoomControl, FullScreenControl, SearchControl,  } from "@react-sigma/core";
@@ -334,8 +335,24 @@ const GraphRenderer = (props: Props) => {
             }
         });
     } */
+
+
+    sigmaRef.current?.on("enterNode", function(event) {
+        const nodeId = event.node;
+
+        console.log("Node entered:", nodeId);
+
+        graph.mergeNodeAttributes(nodeId, { 
+            classes: "floating"
+        });
+
+    
+        sigmaRef.current?.refresh();
+        console.log("Hover effect applied to node:", nodeId);
         
-        
+    });
+
+
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [communityDetails, props.jsonData]);
 
